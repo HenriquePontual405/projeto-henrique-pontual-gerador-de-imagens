@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Galeria de Imagens Geradas</h1>
+    </header>
+    <main>
+        <section id="image-gallery">
+            <!-- As imagens geradas serão carregadas dinamicamente aqui -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Gerador de Imagens com IA. Todos os direitos reservados.</p>
+        <button onclick="location.href='index.html'">Voltar para a Página Inicial</button>
+    </footer>
+    <script>
+        // Simulação de imagens já geradas
+        const generatedImages = [
+            { url: 'https://via.placeholder.com/200', description: 'Imagem 1' },
+            { url: 'https://via.placeholder.com/200', description: 'Imagem 2' },
+            { url: 'https://via.placeholder.com/200', description: 'Imagem 3' }
+        ];
+
+        const gallery = document.getElementById('image-gallery');
+
+        generatedImages.forEach(image => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <img src="${image.url}" alt="${image.description}">
+                <p>${image.description}</p>
+                <button onclick="alert('Interagiu com ${image.description}')">Interagir</button>
+            `;
+            gallery.appendChild(card);
+        });
+    </script>
+</body>
+</html>
